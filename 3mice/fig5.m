@@ -1,0 +1,15 @@
+figure;
+plot(numFrames_maDLC,mean(MATCH(OC,[1:12])),'.-','markersize',15);
+hold on;
+plot(numFrames_VMT,mean(MATCH(OC,[13:18])),'.-','markersize',15');
+p=polyfit(numFrames_maDLC,mean(MATCH(OC,[1:12])),1);
+y_fit=polyval(p,[0:15000]);
+plot([0:15000],y_fit,'--');
+plot(numFrames_maDLC,min(MATCH(OC,[1:12])),'-');
+plot(numFrames_VMT,min(MATCH(OC,[13:18])),'-');
+plot(numFrames_maDLC,max(MATCH(OC,[1:12])),'-');
+plot(numFrames_VMT,max(MATCH(OC,[13:18])),'-');
+yline(max(mean(MATCH(OC,[13:18]))));
+xline(max(numFrames_VMT));
+xline((max(mean(MATCH(OC,[13:18])))-p(2))/p(1));
+xticks([0:3000:15000]);

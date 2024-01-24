@@ -1,0 +1,10 @@
+figure;
+plot(IDmatchedVM(:,1),Match(:,2),'.');
+hold on;
+plot(IDmatchedVM(:,1),Match(:,4),'.');
+plot(mean(IDmatchedVM(:,1)),mean(Match(:,2)),'o');
+plot(mean(IDmatchedVM(:,1)),mean(Match(:,4)),'o');
+xlabel('ID matched virtual marker (%)');
+ylabel('Matches (%)');
+xlim([60 100]);
+ylim([60 100]);
